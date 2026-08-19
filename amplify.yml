@@ -1,11 +1,14 @@
 version: 1
 frontend:
   phases:
+    preBuild:
+      commands:
+        - npm ci
     build:
       commands:
-        - npm run build
+        - npx ng build
   artifacts:
-    baseDirectory: dist/tallereventloop
+    baseDirectory: dist/tallereventloop/browser
     files:
       - '**/*'
   cache:
